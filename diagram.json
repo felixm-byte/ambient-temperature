@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "author": "The Bin - Hack Club",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 313.55, "left": -188.45, "attrs": {} },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "wokwi-max7219-matrix-0",
+      "top": 480.6,
+      "left": -476.19,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "wokwi-lcd1602-0",
+      "top": 323.2,
+      "left": 178.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 580.2, "left": 48.1, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "wokwi-dht22-0",
+      "top": 365.1,
+      "left": -15,
+      "attrs": { "temperature": "36.8" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GND.8", "wokwi-lcd1602-0:GND", "black", [ "h0" ] ],
+    [ "pico:VBUS", "wokwi-lcd1602-0:VCC", "green", [ "h29.11", "v28.8", "h268.8" ] ],
+    [ "pico:GP0", "wokwi-lcd1602-0:SDA", "green", [ "h-38.4", "v211.2", "h307.2", "v-163.4" ] ],
+    [
+      "pico:GP1",
+      "wokwi-lcd1602-0:SCL",
+      "green",
+      [ "h-28.8", "v211.2", "h307.2", "h0", "v-163.5" ]
+    ],
+    [ "wokwi-dht22-0:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "wokwi-dht22-0:SDA", "pico:GP28", "green", [ "v0" ] ],
+    [ "wokwi-dht22-0:GND", "pico:GND.7", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
