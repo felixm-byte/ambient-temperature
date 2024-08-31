@@ -18,20 +18,12 @@
       "left": 20.3,
       "attrs": { "common": "anode" }
     },
-    { "type": "wokwi-ds1307", "id": "wokwi-ds1307-0", "top": 580.2, "left": 48.1, "attrs": {} },
     {
       "type": "wokwi-dht22",
       "id": "wokwi-dht22-0",
       "top": 259.5,
       "left": -34.2,
       "attrs": { "temperature": "16.6" }
-    },
-    {
-      "type": "wokwi-max7219-matrix",
-      "id": "matrix1",
-      "top": 355.8,
-      "left": -702.96,
-      "attrs": { "chain": "4", "layout": "fc16" }
     }
   ],
   "connections": [
@@ -57,12 +49,7 @@
       "green",
       [ "h19.51", "v67.2", "h163.2", "v-105.6", "h-48", "v57.6", "h9.6" ]
     ],
-    [ "pico:VBUS", "wokwi-rgb-led-0:COM", "green", [ "h29.11", "v134.4", "h115.2" ] ],
-    [ "matrix1:CS", "pico:GP5", "green", [ "h67.2", "v-28.8" ] ],
-    [ "matrix1:DIN", "pico:GP3", "green", [ "h67.2", "v-38.4" ] ],
-    [ "matrix1:GND", "pico:GND.2", "black", [ "v38.4", "h163.2", "v-28.8" ] ],
-    [ "matrix1:CLK", "pico:GP2", "green", [ "h67.2", "v-67.2" ] ],
-    [ "pico:3V3_EN", "matrix1:V+", "green", [ "h19.51", "v-76.8", "h-268.8" ] ]
+    [ "pico:VBUS", "wokwi-rgb-led-0:COM", "green", [ "h29.11", "v134.4", "h115.2" ] ]
   ],
   "dependencies": {}
 }
